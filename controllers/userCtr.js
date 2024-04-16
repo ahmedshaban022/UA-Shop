@@ -100,7 +100,7 @@ res.json({rf_token});
 getUser: async(req,res)=>{
     try {
         const user=await Users.findById(req.user.id).select('-password');
-        if(!user) return res.status(400).json({msh:"Userdoes not exist."});
+        if(!user) return res.status(400).json({msg:"Userdoes not exist."});
 
         res.json(user);
 
